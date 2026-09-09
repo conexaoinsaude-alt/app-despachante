@@ -14,7 +14,7 @@ export function App() {
   ]);
 
   const [processes, setProcesses] = useState<ProcessItem[]>([
-    { id: '1', clientName: 'Empresa Exemplo Ltda', serviceType: 'Licenciamento Sanitário', status: 'Em Andamento', deadline: '2026-03-30', notes: 'Aguardando vistoria técnica.' }
+    { id: '1', protocol: '2026/00123', clientName: 'Empresa Exemplo Ltda', serviceType: 'Licenciamento Sanitário', status: 'Em Andamento', deadline: '2026-03-30', notes: 'Aguardando vistoria técnica.' }
   ]);
 
   const handleAddClient = (clientData: Omit<Client, 'id'>) => {
@@ -38,7 +38,7 @@ export function App() {
   const activeProcessesCount = processes.filter(p => p.status === 'Em Andamento').length;
 
   if (currentPage === 'landing') {
-    return <LandingPage />;
+    return <LandingPage onEnterApp={() => setCurrentPage('dashboard')} />;
   }
 
   return (
