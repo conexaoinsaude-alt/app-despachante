@@ -14,7 +14,7 @@ export function App() {
   ]);
 
   const [processes, setProcesses] = useState<ProcessItem[]>([
-    { id: '1', clientName: 'Empresa Exemplo Ltda', status: 'Em Andamento', deadline: '2026-03-30' }
+    { id: '1', clientName: 'Empresa Exemplo Ltda', status: 'Em Andamento', deadline: '2026-03-30', processNumber: '001/2026', agency: 'Prefeitura' }
   ]);
 
   const handleAddClient = (clientData: Omit<Client, 'id'>) => {
